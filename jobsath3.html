@@ -17,6 +17,15 @@
   <link href="bootstrap.min.css" rel="stylesheet" /> 
   <link href="now-ui-kit.css?v=1.2.0" rel="stylesheet" /> 
     <style type="text/css">
+
+          .only{
+            background-color: green; 
+            color: white; 
+            text-align: center; 
+            padding-top: 5%; 
+            font-size: 15pt
+
+          }
   
      /* Smartphones (portrait and landscape) */
           @media (max-width : 480px) {
@@ -31,6 +40,11 @@
             text-align: center;
             background-color: gray;
             color: white;
+          }
+
+         
+
+
           }
     </style>
  
@@ -55,7 +69,7 @@
         </div>
       </div> -->
       <div class="navbar-translate">
-        <a class="navbar-brand" href="#top" rel="tooltip" >
+        <a class="navbar-brand " href="#top" rel="tooltip" >
            Jobs at H3 Commercial Cleaning Service LLC.
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,7 +81,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="H3CleaningServices.com/contact">Contact us</a>
+            <a class="nav-link" href="mailto:talent.acquisition@h3cleaningservices.com">Contact us</a>
           </li>
    <!--  <li class="nav-item">
             <a class="nav-link" href="tel:313-749-0324">(313) 749-0324</a>
@@ -93,22 +107,75 @@
   </nav>
   <!-- End Navbar -->
  
-<header style="background-color: green; color: white; text-align: center; padding-top: 5%; font-size: 15pt"> Employment Application </header>
+<header class= "titled only" style=""> Employment Application </header>
            
-<h4 class="part">Applicant Information</h4>
+<h4 class="part titled">Applicant Information</h4><a id="Top"></a>
 <p style="text-align: center;">* Indicates a require field</p>
 
 <div class="form" style="padding-top: 5%">
   <form action="//submit.form" id="EmploymentApplication100" method="post" onsubmit="return ValidateForm(this);">
 <script type="text/javascript">
+
 function ValidateForm(frm) {
-if (frm.First_Name.value == "") { alert('First name is required.'); frm.First_Name.focus(); return false; }
-if (frm.Last_Name.value == "") { alert('Last name is required.'); frm.Last_Name.focus(); return false; }
-if (frm.Email_Address.value == "") { alert('Email address is required.'); frm.Email_Address.focus(); return false; }
-if (frm.Email_Address.value.indexOf("@") < 1 || frm.Email_Address.value.indexOf(".") < 1) { alert('Please enter a valid email address.'); frm.Email_Address.focus(); return false; }
-if (frm.Position.value == "") { alert('Position is required.'); frm.Position.focus(); return false; }
-if (frm.Phone.value == "") { alert('Phone is required.'); frm.Phone.focus(); return false; }
-return true; }
+
+  if (frm.First_Name.value == "") 
+  { 
+    alert('First name is required.'); 
+    frm.First_Name.focus(); 
+    return false;
+  }
+
+  if (frm.Last_Name.value == "") 
+  { 
+    alert('Last name is required.'); 
+    frm.Last_Name.focus();
+    return false; 
+  }
+
+  if (frm.Email_Address.value == "")
+  { 
+    alert('Email address is required.'); 
+    frm.Email_Address.focus(); 
+    return false; 
+  }
+
+  if (frm.Email_Address.value.indexOf("@") < 1 || frm.Email_Address.value.indexOf(".") < 1) 
+  { 
+    alert('Please enter a valid email address.'); 
+    frm.Email_Address.focus(); 
+    return false; 
+  }
+  if (frm.Position.value == "") 
+  { 
+    alert('Position is required.'); 
+    frm.Position.focus(); 
+    return false; 
+  }
+
+  if (frm.Phone.value == "") 
+  { 
+    alert('Phone is required.'); 
+    frm.Phone.focus(); 
+    return false; 
+  }
+
+console.log(frm.read.checked);
+  if(frm.read.checked == false) {
+    alert('Please check yes if your answers are true and complete to the best of your knowledge.');
+    frm.read.focus();
+    return false;
+  }
+  
+  if(frm.disclaimer.checked == false) {
+    alert('Please check yes is if you read and understand the disclaimer.');
+    frm.read.focus();
+    return false;
+  }
+
+
+
+  return true; 
+}
 </script>
 <table border="0" cellpadding="5" cellspacing="0">
 <tr> <td style="width: 50%">
@@ -454,7 +521,7 @@ return true; }
 </td> </tr> <tr> <td colspan="2">
 <label for="read"><b>I certify that my answers are true and complete to the best of my knowledge.*</b></label>
 <br>
-<input name="read" type="checkbox" value="Yes" required="yes" oninvalid="this.setCustomValidity('please check yes if your answers are true and complete')"/> Yes      
+<input name="read" type="checkbox" value="Yes" /> Yes      
 </td> </tr> <tr> <td colspan="2">
 </p>
 
@@ -464,7 +531,7 @@ return true; }
 
 </td> </tr> <tr> <td colspan="2">
 <label for="disclaimer"><b>I have read and understand the disclaimer and acknowledgement *</b></label><br>
-<input name="disclaimer" type="checkbox" value="Yes" required="yes" oninvalid="this.setCustomValidity('Please read the disclaimer and check yes if understood.')" /> Yes      
+<input name="disclaimer" type="checkbox" value="Yes" /> Yes      
 </td> </tr> <tr> <td colspan="2">
 
 </td> </tr> <tr> <td colspan="2" style="text-align: center;">
